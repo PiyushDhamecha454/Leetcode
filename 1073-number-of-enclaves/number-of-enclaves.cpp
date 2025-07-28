@@ -35,12 +35,7 @@ public:
                 }
             }
         }
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (grid[i][j] == 1) count++;
-                else if (grid[i][j] == 2) grid[i][j] = 1;
-            }
-        }
+        for (int i = 0; i < n; i++) for (int j = 0; j < m; j++) if (grid[i][j] == 1) count++;
         return count;
     }
 };

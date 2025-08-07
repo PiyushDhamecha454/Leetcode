@@ -18,9 +18,7 @@ public:
             temp = temp->next;
         }
         int num = 0;
-        for (int i = 0; i < b.size(); i++) {
-            num += pow(2, b.size() - i - 1) * (b[i] - '0');
-        }
+        for (int i = 0; i < b.size(); i++) num += pow(2, b.size() - i - 1) * (b[i] - '0');
         return num;
     }
 };

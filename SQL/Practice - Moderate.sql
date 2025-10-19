@@ -19,3 +19,14 @@ select c.name as customer_name, o.order_id, count(op.product_id) as product_quan
 inner join Orders o on c.customer_id = o.customer_id
 inner join OrderDetails op on o.order_id = op.order_id
 group by o.order_id, c.name having count(op.product_id) > 1
+
+-- List all unique product names purchased by customers from ‘Delhi’.
+select distinct p.name from Products p
+inner join OrderDetails od on od.product_id = p.product_id
+inner join Orders o on o.order_id = od.order_id
+inner join Customers c on c.customer_id = o.customer_id
+where c.city = 'Delhi'
+
+-- Show each customer’s latest order date.
+select c.customer_id, c.name, max(o.order_date) as last_order_date from Customers c
+inner join Orders o on o.customer_id = c.customer_id group by c.customer_id, c.name

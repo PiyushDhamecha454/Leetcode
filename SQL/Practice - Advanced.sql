@@ -11,4 +11,10 @@ full outer join Employees e on e.emp_id = d.emp_id
 full outer join Customers c on c.customer_id = o.customer_id
 
 -- Find employees who delivered orders to customers in the same city.
+select e.emp_id, e.name as emp_name, c.city, e.city as e_city from Employees e
+inner join Deliveries d on d.emp_id = e.emp_id
+inner join Orders o on o.order_id = d.order_id
+inner join Customers c on c.customer_id = o.customer_id
+where c.city = e.city
+
 -- Show each employee and how many total products they delivered (via joins across all related tables).

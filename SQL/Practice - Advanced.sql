@@ -1,0 +1,4 @@
+-- List all orders along with the delivery employee’s name.
+-- Display all customers, their orders, and the delivery employee who handled them (even if some parts are missing).
+-- Find employees who delivered orders to customers in the same city.
+-- Show each employee and how many total products they delivered (via joins across all related tables).
